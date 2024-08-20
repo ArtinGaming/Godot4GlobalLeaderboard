@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://da0vm7usqatig"]
+
+[ext_resource type="Script" path="res://scripts/leaderboard.gd" id="1_7cp2x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jikds"]
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fy652"]
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wiq4b"]
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.135752, 0.473253, 0.713974, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.5
+offset_right = 80.5
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 95
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Position"
+label_settings = SubResource("LabelSettings_jikds")
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_fy652")
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Score"
+label_settings = SubResource("LabelSettings_wiq4b")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 105.0
+offset_right = 985.0
+offset_bottom = 603.0
+theme_override_constants/h_separation = 250
+columns = 3
+script = ExtResource("1_7cp2x")

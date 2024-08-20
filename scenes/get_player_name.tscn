@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk6uhgvpw5pak"]
+
+[ext_resource type="Script" path="res://scripts/get_player_name.gd" id="1_3m1uq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umhbb"]
+bg_color = Color(0.709804, 0.572549, 0.407843, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqlfq"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GetPlayerName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3m1uq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 327.5
+offset_top = 223.0
+offset_right = 824.5
+offset_bottom = 425.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_umhbb")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 257.0
+offset_right = 798.0
+offset_bottom = 322.0
+
+[node name="Submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 331.0
+offset_right = 760.0
+offset_bottom = 406.0
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 32
+text = "Submit"
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 263.0
+offset_right = 492.0
+offset_bottom = 308.0
+text = "Name:"
+label_settings = SubResource("LabelSettings_nqlfq")
+
+[connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
