@@ -2,9 +2,10 @@ extends GridContainer
 
 var player_list_with_pos = []
 
-func _ready() -> void:
 
+func _ready() -> void:
 	var sw_result: Dictionary = await SilentWolf.Scores.get_scores(0).sw_get_scores_complete
+
 	player_list_with_pos = sort_players_and_add_position(SilentWolf.Scores.scores)
 	add_player_to_grid(player_list_with_pos)
 	
@@ -33,10 +34,15 @@ func add_player_to_grid(player_list):
 		score_label.show()
 		score_vbox.add_child(score_label)
 	add_child(score_vbox)
-	
+
+func sort_by_score_ascending(a, b):
+	return a["score"] < b["score"]
+
 func sort_players_and_add_position(player_list):
-	var position = 1
+	player_list.sort_custom(sort_by_score_ascending)
 	
+	var position = 1
+
 	for player in player_list:
 		player["position"] = position
 		position += 1

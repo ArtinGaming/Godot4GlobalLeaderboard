@@ -2,104 +2,47 @@
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_loy2n"]
 [ext_resource type="PackedScene" uid="uid://bk6uhgvpw5pak" path="res://scenes/get_player_name.tscn" id="2_0x17r"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_2fnqb"]
-font_size = 128
-outline_size = 32
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://dg7v2b2wmom2k" path="res://scenes/speedrun.tscn" id="3_6jnpa"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_loy2n")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1155.0
-offset_bottom = 645.0
-
-[node name="BG" type="ColorRect" parent="Control"]
-layout_mode = 1
+[node name="BG" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 654.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.282353, 0.494118, 0.705882, 1)
 
-[node name="Score" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Score: 150"
-label_settings = SubResource("LabelSettings_2fnqb")
-
-[node name="Increase" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -438.5
-offset_top = 1.5
-offset_right = -142.5
-offset_bottom = 110.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 16
-theme_override_font_sizes/font_size = 54
-text = "Increase"
-
-[node name="Decrease" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 116.5
-offset_top = 1.5
-offset_right = 412.5
-offset_bottom = 110.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 16
-theme_override_font_sizes/font_size = 54
-text = "Decrease"
-
-[node name="Submit" type="Button" parent="Control"]
-layout_mode = 1
+[node name="Submit" type="Button" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -148.0
-offset_top = -124.0
-offset_right = 148.0
-offset_bottom = -15.0
+offset_left = 429.5
+offset_top = 521.0
+offset_right = 725.5
+offset_bottom = 630.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 54
 text = "Submit"
 
-[node name="Back" type="Button" parent="Control"]
-layout_mode = 1
+[node name="Back" type="Button" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 375.5
-offset_top = -87.0
-offset_right = 569.5
-offset_bottom = -5.0
+offset_left = 953.0
+offset_top = 558.0
+offset_right = 1147.0
+offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 16
@@ -109,7 +52,7 @@ text = "Back"
 [node name="GetPlayerName" parent="." instance=ExtResource("2_0x17r")]
 visible = false
 
-[connection signal="pressed" from="Control/Increase" to="." method="_on_increase_pressed"]
-[connection signal="pressed" from="Control/Decrease" to="." method="_on_decrease_pressed"]
-[connection signal="pressed" from="Control/Submit" to="." method="_on_submit_pressed"]
-[connection signal="pressed" from="Control/Back" to="." method="_on_back_pressed"]
+[node name="Speedrun" parent="." instance=ExtResource("3_6jnpa")]
+
+[connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

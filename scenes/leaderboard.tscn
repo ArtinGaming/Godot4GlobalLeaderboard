@@ -62,10 +62,10 @@ label_settings = SubResource("LabelSettings_wiq4b")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 187.0
+offset_left = 324.0
 offset_top = 105.0
-offset_right = 985.0
+offset_right = 1122.0
 offset_bottom = 603.0
-theme_override_constants/h_separation = 250
+theme_override_constants/h_separation = 230
 columns = 3
 script = ExtResource("1_7cp2x")

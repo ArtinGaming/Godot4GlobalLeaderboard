@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg7v2b2wmom2k"]
+
+[ext_resource type="Script" path="res://scripts/speedrun.gd" id="1_f2urm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fliu5"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Speedrun" type="CanvasLayer"]
+script = ExtResource("1_f2urm")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "100.00"
+label_settings = SubResource("LabelSettings_fliu5")

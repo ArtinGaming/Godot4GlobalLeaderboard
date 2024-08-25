@@ -5,6 +5,10 @@ var player_list = []
 
 var score = 0
 
+var speedrun_time = 0
+var speedrun_time_end = 0
+var display_speedrun_timer = true
+
 func _ready() -> void:
 	SilentWolf.configure({
 		"api_key": "YOUR_SILENT_WOLF_API_KEY",
